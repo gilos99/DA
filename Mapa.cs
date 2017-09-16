@@ -60,11 +60,12 @@ namespace Dyrdon_Adventure
 			Console.WriteLine("Jesteś w mieście! Co chcesz zrobić?");
 			Console.WriteLine("1.Idź do sklepu");
 			Console.WriteLine("2.Idź na arenę");
-			Console.WriteLine("3.Wróć");
+			Console.WriteLine("3.Idź na siłkę");
+			Console.WriteLine("4.Wróć");
 			string wyborMiastoString=Console.ReadLine();
 			int result;
 			bool wyborMiastoInt=int.TryParse(wyborMiastoString,out result);
-			if (wyborMiastoInt&&result<=3) {
+			if (wyborMiastoInt&&result<=4) {
 			switch (result) {
 				case 1:
 					{
@@ -78,6 +79,11 @@ namespace Dyrdon_Adventure
 					break;
 				case 3:
 					{
+						Silownia();
+					}
+					break;
+					case 4:
+					{
 						Universe();
 					}
 					break;
@@ -88,12 +94,54 @@ namespace Dyrdon_Adventure
 				
 			
 			}
-			else if (!wyborMiastoInt||result>3) {
+			else if (!wyborMiastoInt||result>4) {
 				Console.WriteLine("Zły klawisz alfanabeto!");
 				Console.ReadKey();
 				Miasto();
 				}
 			
+		}
+		public void Silownia()
+		{
+			Console.Clear();
+			Player.Stats();
+			Console.WriteLine("Jesteś na siłowni. Możesz tutaj zwiększyć masę mięśniową");
+			Console.WriteLine("1.Ćwicz (50$)");
+			Console.WriteLine("2.Wróć");
+			string wyborSilkaString=Console.ReadLine();
+			int result;
+			bool wyborSilkaBool=int.TryParse(wyborSilkaString,out result);
+			switch (result) {
+				case 1:
+					if (Player.Money>=50) {
+						Player.Money-=50;
+						Player.Damage+=10;
+						Console.WriteLine("Dostałeś + 10 siły!");
+						Console.ReadKey();
+						Silownia();
+					}
+					else	if (Player.Money<50) {
+						Console.WriteLine("Nie dla psa!");
+						Console.ReadKey();
+						Silownia();
+					}
+					break;
+				case 2:
+					Miasto();
+					break;
+				default:
+					{
+						Console.WriteLine("Zły klawisz alfanabeto!");
+						Console.ReadKey();
+						Silownia();
+					}
+					break;
+			}
+			if (!wyborSilkaBool) {
+				Console.WriteLine("Zły klawisz alfanabeto!");
+						Console.ReadKey();
+						Silownia();
+			}
 		}
 		public void Arena()
 		{

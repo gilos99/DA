@@ -25,7 +25,7 @@ namespace Dyrdon_Adventure
 		public int Cena{get;set;}
 		void IPrzedmiot.Wypisz()
 		{
-			Console.WriteLine("{0}  {1}",Nazwa,Cena);
+			Console.WriteLine("{0} ({1}$)",Nazwa,Cena);
 		}
 	}
 }
