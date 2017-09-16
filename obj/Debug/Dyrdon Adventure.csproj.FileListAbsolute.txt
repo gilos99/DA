@@ -1,0 +1,5 @@
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\bin\Debug\Dyrdon Adventure.exe.config
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\bin\Debug\Dyrdon Adventure.exe
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\bin\Debug\Dyrdon Adventure.pdb
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\obj\Debug\Dyrdon Adventure.exe
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\obj\Debug\Dyrdon Adventure.pdb

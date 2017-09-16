@@ -1,0 +1,3 @@
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\bin\Release\Dyrdon Adventure.exe.config
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\bin\Release\Dyrdon Adventure.exe
+C:\Users\GIL\Documents\SharpDevelop Projects\Dyrdon Adventure\Dyrdon Adventure\obj\Release\Dyrdon Adventure.exe
