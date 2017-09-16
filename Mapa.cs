@@ -113,14 +113,14 @@ namespace Dyrdon_Adventure
 			bool wyborSilkaBool=int.TryParse(wyborSilkaString,out result);
 			switch (result) {
 				case 1:
-					if (Player.Money>=50) {
-						Player.Money-=50;
-						Player.Damage+=10;
+					if (Player.Money>=20) {
+						Player.Money-=20;
+						Player.Damage+=15;
 						Console.WriteLine("Dostałeś + 10 siły!");
 						Console.ReadKey();
 						Silownia();
 					}
-					else	if (Player.Money<50) {
+					else	if (Player.Money<20) {
 						Console.WriteLine("Nie dla psa!");
 						Console.ReadKey();
 						Silownia();
