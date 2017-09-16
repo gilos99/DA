@@ -15,11 +15,12 @@ namespace Dyrdon_Adventure
 	/// </summary>
 	public class Arena
 	{
-		public IEnemy[] enemies =new Enemy[2];
+		public IEnemy[] enemies =new Enemy[3];
 		public Arena()
 		{
 			enemies[0]=new Enemy("Maciek","Bialon",200);
 			enemies[1]=new Enemy("Szymon","Dyrda",300);
+			enemies[2]=new Enemy("Daniel","Magical",350);
 	
 		}
 		public int Combo{get;set;}

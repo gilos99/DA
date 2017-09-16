@@ -105,7 +105,7 @@ namespace Dyrdon_Adventure
 			string wyborArenaString=Console.ReadLine();
 			int result;
 			bool wyborArenaBool=int.TryParse(wyborArenaString,out result);
-			if (wyborArenaBool&&result<=3) {
+			if (wyborArenaBool&&result<=4) {
 				if (result==Area.enemies.Length+1) {
 						Miasto();
 				
@@ -121,11 +121,16 @@ namespace Dyrdon_Adventure
 						Fight(Area.enemies[1]);	
 					}
 					break;
+					case 3:
+					{
+						Fight(Area.enemies[2]);	
+					}
+					break;
 				default:
 					break;
 			}
 			}
-			else if (!wyborArenaBool||result>3) {
+			else if (!wyborArenaBool||result>4) {
 				Console.WriteLine("Zły klawisz alfanabeto!");
 				Console.ReadKey();
 				Arena();
@@ -149,7 +154,9 @@ namespace Dyrdon_Adventure
 				if (enemy==Area.enemies[1]) {
 					Win(80);
 				}
-				
+				if (enemy==Area.enemies[2]) {
+					Win(100);
+				}
 			}
 			Console.Clear();
 			Player.Stats();
