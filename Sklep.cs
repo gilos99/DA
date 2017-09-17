@@ -15,13 +15,13 @@ namespace Dyrdon_Adventure
 	/// </summary>
 	public class Sklep
 	{
-		public IPrzedmiot[] iteam=new Przedmiot[3];
+		public IPrzedmiot[] iteam=new Przedmiot[4];
 		public Sklep()
 		{
 			iteam[0]=new Przedmiot("Miecz",200);
 			iteam[1]=new Przedmiot("Dzida",100);
 			iteam[2]=new Przedmiot("Mikstura Życia",50);
-			
+			iteam[3]=new Przedmiot("Jedzenie",20);
 		}
 			
 		public void WriteIteams()

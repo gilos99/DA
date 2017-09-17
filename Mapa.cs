@@ -23,7 +23,10 @@ namespace Dyrdon_Adventure
 		
 		public void Universe()
 		{
-			
+			Player.Glod-=5;
+			if (Player.Glod<=0) {
+				Koniec();
+			}
 			Console.Clear();
 			Player.Stats();
 		Console.WriteLine("Gdzie chcesz isć?");
@@ -53,6 +56,10 @@ namespace Dyrdon_Adventure
 		}
 		public void Miasto()
 		{
+			Player.Glod-=5;
+			if (Player.Glod<=0) {
+				Koniec();
+			}
 			Area.enemies[0].Zycie=200;
 			Area.enemies[1].Zycie=300;
 			Console.Clear();
@@ -103,6 +110,10 @@ namespace Dyrdon_Adventure
 		}
 		public void Silownia()
 		{
+			Player.Glod-=5;
+			if (Player.Glod<=0) {
+				Koniec();
+			}
 			Console.Clear();
 			Player.Stats();
 			Console.WriteLine("Jesteś na siłowni. Możesz tutaj zwiększyć masę mięśniową");
@@ -145,6 +156,10 @@ namespace Dyrdon_Adventure
 		}
 		public void Arena()
 		{
+			Player.Glod-=5;
+			if (Player.Glod<=0) {
+				Koniec();
+			}
 			Console.Clear();
 			Player.Stats();
 			Console.WriteLine("Jesteś w arenie. Możesz tutaj walczyć.");
@@ -194,16 +209,20 @@ namespace Dyrdon_Adventure
 		}
 		public void Fight(IEnemy enemy)
 		{
+			
+			if (Player.Glod<=0) {
+				Koniec();
+			}
 			IEnemy wrog=enemy;
 			if (enemy.Zycie<=0) {
 				if (enemy==Area.enemies[0]) {
-					Win(40);
+					Win(100);
 				}
 				if (enemy==Area.enemies[1]) {
-					Win(80);
+					Win(200);
 				}
 				if (enemy==Area.enemies[2]) {
-					Win(100);
+					Win(300);
 				}
 			}
 			Console.Clear();
@@ -284,6 +303,9 @@ namespace Dyrdon_Adventure
 		public void Sklep()
 		{
 			
+			if (Player.Glod<=0) {
+				Koniec();
+			}
 			Console.Clear();
 			Player.Stats();
 			Console.WriteLine("Jesteś w sklepie! Co chcesz kupić?");
@@ -292,7 +314,7 @@ namespace Dyrdon_Adventure
 			string wyborSklepString=Console.ReadLine();
 			int result;
 			bool wyborSklepBool=int.TryParse(wyborSklepString,out result);
-			if (wyborSklepBool&&result<=4) {
+			if (wyborSklepBool&&result<=5) {
 				if (result==(Shop.iteam.Length+1)) {
 				Miasto();
 			}
@@ -340,11 +362,29 @@ namespace Dyrdon_Adventure
 						Sklep();
 					}
 					break;
+				case 4:
+					{
+					if (Player.Money>=20)
+						{
+							Player.Money-=20;
+							Player.Glod=100;
+							Console.WriteLine("Kupiłeś jedzenie");
+							Console.ReadKey();
+							
+						}
+					else if(Player.Money<20) {
+						Console.WriteLine("Nie stać cię na to");
+						Console.ReadKey();
+					}
+					
+					Sklep();
+					}
+					break;
 					default :
 						break;
 			}
 			}
-			else if (!wyborSklepBool||result>4) {
+			else if (!wyborSklepBool||result>5) {
 				Console.WriteLine("Zły klawisz alfanabeto!");
 				Console.ReadKey();
 				Sklep();

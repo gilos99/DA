@@ -21,7 +21,7 @@ namespace Dyrdon_Adventure
 			Name=_Name;
 			LastName=_LastName;
 			Class=_Class;
-			
+			Glod=100;
 			
 			switch (_Class) {
 				case 1:
@@ -50,6 +50,7 @@ namespace Dyrdon_Adventure
 					break;
 			}
 		}
+		public static int Glod{get;set;}
 		public static int Damage{get;set;}
 		public static string Name{get;set;}
 		public static string LastName{get;set;}
@@ -65,6 +66,7 @@ namespace Dyrdon_Adventure
 			Console.WriteLine("      {0} {1}",Name,LastName);
 			Console.WriteLine("Klasa : {0}",Klasa);
 			Console.WriteLine("Zdrowie : {0}",Health);
+			Console.WriteLine("Głód : {0}",Glod);
 			Console.WriteLine("Doświadczenie : {0}",Exp);
 			Console.WriteLine("Pieniądze : {0}",Money);
 			Console.WriteLine("-------------------------------");
